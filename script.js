@@ -250,3 +250,134 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Language switching functionality
+let currentLanguage = 'en';
+
+// Initialize language system on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for saved language preference
+    const savedLanguage = localStorage.getItem('preferred-language') || 'en';
+    changeLanguage(savedLanguage);
+    
+    // Setup language menu toggle
+    const languageBtn = document.getElementById('language-btn');
+    const languageMenu = document.getElementById('language-menu');
+    
+    if (languageBtn && languageMenu) {
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageMenu.classList.toggle('hidden');
+        });
+        
+        // Close language menu when clicking outside
+        document.addEventListener('click', function() {
+            languageMenu.classList.add('hidden');
+        });
+        
+        // Prevent menu from closing when clicking inside it
+        languageMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
+
+// Change language function
+function changeLanguage(language) {
+    if (!translations[language]) {
+        console.warn(`Translation for language "${language}" not found`);
+        return;
+    }
+    
+    currentLanguage = language;
+    
+    // Update current language display
+    const currentLangDisplay = document.getElementById('current-lang');
+    if (currentLangDisplay) {
+        const langMap = { en: 'EN', fr: 'FR', ar: 'ع' };
+        currentLangDisplay.textContent = langMap[language] || language.toUpperCase();
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = language;
+    
+    // Update all elements with data-i18n attributes
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedTranslation(translations[language], key);
+        
+        if (translation) {
+            element.textContent = translation;
+        }
+    });
+    
+    // Update page direction for Arabic
+    if (language === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.body.setAttribute('dir', 'rtl');
+        document.body.classList.add('rtl');
+        document.body.style.fontFamily = 'Arial, sans-serif'; // Better Arabic font support
+    } else {
+        document.documentElement.dir = 'ltr';
+        document.body.setAttribute('dir', 'ltr');
+        document.body.classList.remove('rtl');
+        document.body.style.fontFamily = ''; // Reset to default
+    }
+    
+    // Update page meta tags
+    updateMetaTags(language);
+    
+    // Save language preference
+    localStorage.setItem('preferred-language', language);
+    
+    // Close language menu
+    const languageMenu = document.getElementById('language-menu');
+    if (languageMenu) {
+        languageMenu.classList.add('hidden');
+    }
+}
+
+// Update meta tags for SEO
+function updateMetaTags(lang) {
+    const titles = {
+        en: "The Empire - Digital Network of Content & Creativity | EmperialCoder",
+        fr: "The Empire - Réseau Numérique de Contenu et Créativité | EmperialCoder", 
+        ar: "الإمبراطورية - شبكة رقمية للمحتوى والإبداع | EmperialCoder"
+    };
+    
+    const descriptions = {
+        en: "Explore The Empire's network of specialized content websites and hire EmperialCoder for professional web development, logo design, and custom software solutions. Based in Tunisia.",
+        fr: "Explorez le réseau de sites web de contenu spécialisé de The Empire et engagez EmperialCoder pour le développement web professionnel, design de logo, et solutions logicielles personnalisées. Basé en Tunisie.",
+        ar: "استكشف شبكة الإمبراطورية من مواقع المحتوى المتخصص واستعن بـ EmperialCoder للتطوير الاحترافي للمواقع وتصميم الشعارات والحلول البرمجية المخصصة. مقرها في تونس."
+    };
+    
+    // Update page title
+    document.title = titles[lang];
+    
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', descriptions[lang]);
+    
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', titles[lang]);
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', descriptions[lang]);
+    
+    // Update Twitter Card tags
+    const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', titles[lang]);
+    
+    const twitterDesc = document.querySelector('meta[property="twitter:description"]');
+    if (twitterDesc) twitterDesc.setAttribute('content', descriptions[lang]);
+}
+
+// Helper function to get nested translation
+function getNestedTranslation(translations, key) {
+    return key.split('.').reduce((obj, k) => obj && obj[k], translations);
+}
+
+// Make changeLanguage function globally available
+window.changeLanguage = changeLanguage;
