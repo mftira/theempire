@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Empire - Digital Network of Content & Creativity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'empire-gold': '#d4af37',
+                        'empire-dark': '#1a1a1a',
+                        'empire-gray': '#2d2d2d'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #d4af37, #f4e06d);
+        }
+        .hover-gold {
+            transition: all 0.3s ease;
+        }
+        .hover-gold:hover {
+            color: #d4af37;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-empire-dark text-white smooth-scroll">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-empire-dark/95 backdrop-blur-sm z-50 border-b border-empire-gold/20">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <!-- Logo placeholder - replace with actual logo -->
+                    <div class="w-12 h-12 bg-empire-gold rounded-lg flex items-center justify-center">
+                        <i class="fas fa-crown text-empire-dark text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-empire-gold">The Empire</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="hover-gold">Home</a>
+                    <a href="#network" class="hover-gold">Network</a>
+                    <a href="#services" class="hover-gold">Services</a>
+                    <a href="#projects" class="hover-gold">Projects</a>
+                    <a href="#founder" class="hover-gold">Founder</a>
+                    <a href="#contact" class="hover-gold">Contact</a>
+                </div>
+                <button class="md:hidden text-empire-gold" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#hero" class="hover-gold">Home</a>
+                    <a href="#network" class="hover-gold">Network</a>
+                    <a href="#services" class="hover-gold">Services</a>
+                    <a href="#projects" class="hover-gold">Projects</a>
+                    <a href="#founder" class="hover-gold">Founder</a>
+                    <a href="#contact" class="hover-gold">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Main Logo -->
+            <div class="mb-8">
+                <div class="w-32 h-32 bg-empire-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-crown text-empire-dark text-4xl"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-empire-gold">The Empire</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">
+                A Digital Network of Content & Creativity
+            </h2>
+            <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Explore niche content websites and hire us for custom projects — all in one place.
+            </p>
+            
+            <a href="#services" class="inline-flex items-center px-8 py-4 bg-empire-gold text-empire-dark font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+                Explore The Empire
+                <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="services" class="py-20 px-6 bg-empire-dark">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-empire-gold">Hire Us</h2>
+                <p class="text-lg text-gray-400">Professional development services with transparent pricing</p>
+            </div>
+
+            <div class="bg-empire-gray rounded-lg overflow-hidden border border-empire-gold/20">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-empire-gold">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-empire-dark font-bold">Service</th>
+                                <th class="px-6 py-4 text-center text-empire-dark font-bold">Price (TND)</th>
+                                <th class="px-6 py-4 text-center text-empire-dark font-bold">Price (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-white">
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Static Website</td>
+                                <td class="px-6 py-4 text-center">300 TND</td>
+                                <td class="px-6 py-4 text-center">$95</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Dynamic Website</td>
+                                <td class="px-6 py-4 text-center">500 TND</td>
+                                <td class="px-6 py-4 text-center">$160</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">E-commerce Website</td>
+                                <td class="px-6 py-4 text-center">800–1200 TND</td>
+                                <td class="px-6 py-4 text-center">$260–$390</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Logo Design</td>
+                                <td class="px-6 py-4 text-center">120 TND</td>
+                                <td class="px-6 py-4 text-center">$40</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Vault App License</td>
+                                <td class="px-6 py-4 text-center">50 TND (Basic)</td>
+                                <td class="px-6 py-4 text-center">$15 (Basic)</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Frontend Development</td>
+                                <td class="px-6 py-4 text-center">400 TND</td>
+                                <td class="px-6 py-4 text-center">$130</td>
+                            </tr>
+                            <tr class="border-b border-empire-gold/20">
+                                <td class="px-6 py-4 font-medium">Backend Development</td>
+                                <td class="px-6 py-4 text-center">450 TND</td>
+                                <td class="px-6 py-4 text-center">$145</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Custom Desktop App</td>
+                                <td class="px-6 py-4 text-center">900+ TND</td>
+                                <td class="px-6 py-4 text-center">$300+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quality Statement -->
+            <div class="text-center mt-12 mb-8">
+                <div class="bg-empire-gray rounded-lg p-8 border border-empire-gold/20">
+                    <i class="fas fa-quote-left text-empire-gold text-2xl mb-4"></i>
+                    <p class="text-lg text-gray-300 italic mb-4 max-w-3xl mx-auto">
+                        "We don't just deliver the job — we deliver clean, scalable work that we would personally be proud to use. That's the standard we follow."
+                    </p>
+                    <div class="w-16 h-1 bg-empire-gold mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- Delivery Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Standard Delivery -->
+                <div class="bg-empire-gray rounded-lg p-6 border border-empire-gold/20">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clock text-empire-gold text-xl mr-3"></i>
+                        <h3 class="text-xl font-bold text-white">Standard Delivery</h3>
+                    </div>
+                    <p class="text-gray-400 mb-3">1-2 weeks delivery time</p>
+                    <p class="text-sm text-gray-500">Perfect for most projects with standard requirements and timeline</p>
+                </div>
+
+                <!-- Rush Fee Option -->
+                <div class="bg-gradient-to-r from-empire-gold/10 to-yellow-600/10 rounded-lg p-6 border-2 border-empire-gold/30 relative">
+                    <div class="absolute top-2 right-2">
+                        <span class="px-2 py-1 bg-empire-gold text-empire-dark text-xs rounded-full font-bold">+20%</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-empire-gold text-xl mr-3"></i>
+                        <h3 class="text-xl font-bold text-empire-gold">Rush Fee Option</h3>
+                    </div>
+                    <p class="text-gray-400 mb-3">2× faster delivery</p>
+                    <p class="text-sm text-gray-500">For urgent or weekend delivery requests</p>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="bg-empire-gray rounded-lg p-6 border border-empire-gold/20 mb-8">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-empire-gold text-xl mr-3 mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-3">Important Notes</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-empire-gold mr-2">•</span>
+                                <span>The prices above are for basic services. Any additional work or features will be quoted separately.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-empire-gold mr-2">•</span>
+                                <span>Rush delivery option available with a 20% surcharge for faster completion times.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-empire-gold mr-2">•</span>
+                                <span>All projects include basic revisions and post-delivery support.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contact" class="inline-flex items-center px-8 py-4 bg-empire-gold text-empire-dark font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-empire-gray">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-empire-gold">Live Projects</h2>
+                <p class="text-lg text-gray-400">Showcase of real working examples</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vault App -->
+                <div class="bg-empire-dark rounded-lg overflow-hidden border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-empire-gold to-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-vault text-empire-dark text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Vault App</h3>
+                        <p class="text-gray-400 mb-4">Your best productivity app out there.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-blue-600 text-xs rounded-full">Desktop App</span>
+                            <a href="https://mftira.github.io/portfolio/#projects" class="text-empire-gold hover:text-yellow-500 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gamefox -->
+                <div class="bg-empire-dark rounded-lg overflow-hidden border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Gamefox</h3>
+                        <p class="text-gray-400 mb-4">Tunisian e-commerce gaming store with modern design</p>
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-green-600 text-xs rounded-full">E-commerce</span>
+                            <a href="https://gamefox.store/" class="text-empire-gold hover:text-yellow-500 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empire Blogs Portfolio -->
+                <div class="bg-empire-dark rounded-lg overflow-hidden border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-blog text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Empire Blog Network</h3>
+                        <p class="text-gray-400 mb-4">Collection of niche content websites</p>
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-purple-600 text-xs rounded-full">Content</span>
+                            <a href="#network" class="text-empire-gold hover:text-yellow-500 transition-colors">
+                                <i class="fas fa-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Portfolio Section -->
+    <section id="founder" class="py-20 px-6 bg-empire-dark">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-empire-gold">Meet The Founder</h2>
+                <p class="text-lg text-gray-400">The creative mind behind The Empire</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Founder Info -->
+                <div>
+                    <div class="bg-empire-gray rounded-lg p-8 border border-empire-gold/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-20 h-20 bg-empire-gold rounded-full flex items-center justify-center mr-6">
+                                <i class="fas fa-user-crown text-empire-dark text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-empire-gold">EmperialCoder</h3>
+                                <p class="text-gray-400">Founder & Lead Developer</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            The visionary behind The Empire network, EmperialCoder combines technical expertise with creative innovation 
+                            to deliver exceptional digital solutions. With a passion for clean, scalable code and user-centric design, 
+                            we've built a reputation for excellence in the digital space.
+                        </p>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-empire-gold mr-3"></i>
+                                <a href="mailto:emperialcoder@gmail.com" class="text-gray-300 hover:text-empire-gold transition-colors">
+                                    emperialcoder@gmail.com
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-code text-empire-gold mr-3"></i>
+                                <span class="text-gray-300">Full-Stack Developer & Digital Strategist</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-empire-gold mr-3"></i>
+                                <span class="text-gray-300">Tunisia</span>
+                            </div>
+                        </div>
+
+                        <a href="https://mftira.github.io/portfolio/" target="_blank" 
+                           class="inline-flex items-center px-6 py-3 bg-empire-gold text-empire-dark font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            Complete Portfolio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Skills & Expertise -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-white">Skills & Expertise</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-empire-gray rounded-lg p-4 border border-empire-gold/20">
+                            <h5 class="font-bold text-empire-gold mb-2">Frontend</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-600 text-xs rounded">HTML/CSS</span>
+                                <span class="px-2 py-1 bg-blue-600 text-xs rounded">JavaScript</span>
+                                <span class="px-2 py-1 bg-blue-600 text-xs rounded">React</span>
+                                <span class="px-2 py-1 bg-blue-600 text-xs rounded">Tailwind</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-empire-gray rounded-lg p-4 border border-empire-gold/20">
+                            <h5 class="font-bold text-empire-gold mb-2">Backend</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-600 text-xs rounded">Node.js</span>
+                                <span class="px-2 py-1 bg-green-600 text-xs rounded">Python</span>
+                                <span class="px-2 py-1 bg-green-600 text-xs rounded">PHP</span>
+                                <span class="px-2 py-1 bg-green-600 text-xs rounded">Databases</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-empire-gray rounded-lg p-4 border border-empire-gold/20">
+                            <h5 class="font-bold text-empire-gold mb-2">Design</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-600 text-xs rounded">UI/UX</span>
+                                <span class="px-2 py-1 bg-purple-600 text-xs rounded">Logo Design</span>
+                                <span class="px-2 py-1 bg-purple-600 text-xs rounded">Branding</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-empire-gray rounded-lg p-4 border border-empire-gold/20">
+                            <h5 class="font-bold text-empire-gold mb-2">Other</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-orange-600 text-xs rounded">Desktop Apps</span>
+                                <span class="px-2 py-1 bg-orange-600 text-xs rounded">E-commerce</span>
+                                <span class="px-2 py-1 bg-orange-600 text-xs rounded">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="bg-empire-gray rounded-lg p-6 border border-empire-gold/20">
+                        <h5 class="font-bold text-empire-gold mb-4">Achievements</h5>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-empire-gold mr-2"></i>
+                                Built 6+ successful niche content websites
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-empire-gold mr-2"></i>
+                                Developed Vault App - Secure password manager
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-empire-gold mr-2"></i>
+                                Created Gamefox - Tunisian gaming e-commerce
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-empire-gold mr-2"></i>
+                                50+ satisfied clients and counting
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niche Websites Section -->
+    <section id="network" class="py-20 px-6 bg-empire-gray">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-empire-gold">Empire Network</h2>
+                <p class="text-lg text-gray-400">Discover our specialized content websites</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tech Empire -->
+                <div class="bg-empire-dark rounded-lg p-6 border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Tech Empire</h3>
+                        <span class="px-3 py-1 bg-blue-600 text-xs rounded-full">Tech</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Tech news platform covering innovation, gadgets, and digital trends</p>
+                    <a href="https://techempire.website" target="_blank" class="inline-flex items-center text-empire-gold hover:text-yellow-500 transition-colors">
+                        Visit Website <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Crypto Empire -->
+                <div class="bg-empire-dark rounded-lg p-6 border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Crypto Empire</h3>
+                        <span class="px-3 py-1 bg-yellow-600 text-xs rounded-full">Finance</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Crypto blog with insights, coin analysis, and blockchain updates</p>
+                    <a href="https://cryptoempire.website" target="_blank" class="inline-flex items-center text-empire-gold hover:text-yellow-500 transition-colors">
+                        Visit Website <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Prestige Empire -->
+                <div class="bg-empire-dark rounded-lg p-6 border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Prestige Empire</h3>
+                        <span class="px-3 py-1 bg-purple-600 text-xs rounded-full">Lifestyle</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Lifestyle and luxury content hub showcasing trends and brands</p>
+                    <a href="https://prestigeempire.website" target="_blank" class="inline-flex items-center text-empire-gold hover:text-yellow-500 transition-colors">
+                        Visit Website <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Marketing Empire -->
+                <div class="bg-empire-dark rounded-lg p-6 border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Marketing Empire</h3>
+                        <span class="px-3 py-1 bg-green-600 text-xs rounded-full">Marketing</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Marketing strategies, case studies, and growth hacks</p>
+                    <a href="https://marketingempire.website" target="_blank" class="inline-flex items-center text-empire-gold hover:text-yellow-500 transition-colors">
+                        Visit Website <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Fitness Empire -->
+                <div class="bg-empire-dark rounded-lg p-6 border border-empire-gold/20 hover:border-empire-gold/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Fitness Empire</h3>
+                        <span class="px-3 py-1 bg-red-600 text-xs rounded-full">Fitness</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Fitness tips, workout plans, and wellness articles</p>
+                    <a href="https://fitnessempire.website" target="_blank" class="inline-flex items-center text-empire-gold hover:text-yellow-500 transition-colors">
+                        Visit Website <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-empire-gray">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-empire-gold">Work With Us</h2>
+                <p class="text-lg text-gray-400">Ready to start your next project? Let's talk!</p>
+            </div>
+
+            <div class="bg-empire-gray rounded-lg p-8 border border-empire-gold/20">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-3 bg-empire-dark border border-empire-gold/30 rounded-lg text-white placeholder-gray-400 focus:border-empire-gold focus:outline-none transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 bg-empire-dark border border-empire-gold/30 rounded-lg text-white placeholder-gray-400 focus:border-empire-gold focus:outline-none transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" required 
+                                  class="w-full px-4 py-3 bg-empire-dark border border-empire-gold/30 rounded-lg text-white placeholder-gray-400 focus:border-empire-gold focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full px-8 py-4 bg-empire-gold text-empire-dark font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+                        Send Message
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-empire-dark border-t border-empire-gold/20 py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Empire Network Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-empire-gold">Empire Network</h3>
+                    <div class="space-y-2">
+                        <a href="https://techempire.website" target="_blank" class="block text-gray-400 hover:text-empire-gold transition-colors">Tech Empire</a>
+                        <a href="https://cryptoempire.website" target="_blank" class="block text-gray-400 hover:text-empire-gold transition-colors">Crypto Empire</a>
+                        <a href="https://prestigeempire.website" target="_blank" class="block text-gray-400 hover:text-empire-gold transition-colors">Prestige Empire</a>
+                        <a href="https://marketingempire.website" target="_blank" class="block text-gray-400 hover:text-empire-gold transition-colors">Marketing Empire</a>
+                        <a href="https://fitnessempire.website" target="_blank" class="block text-gray-400 hover:text-empire-gold transition-colors">Fitness Empire</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-empire-gold">Services</h3>
+                    <div class="space-y-2">
+                        <a href="#services" class="block text-gray-400 hover:text-empire-gold transition-colors">Web Development</a>
+                        <a href="#services" class="block text-gray-400 hover:text-empire-gold transition-colors">Logo Design</a>
+                        <a href="#services" class="block text-gray-400 hover:text-empire-gold transition-colors">Desktop Applications</a>
+                        <a href="#services" class="block text-gray-400 hover:text-empire-gold transition-colors">E-commerce Solutions</a>
+                    </div>
+                </div>
+
+                <!-- Contact & Social -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-empire-gold">Connect</h3>
+                    <div class="space-y-2 mb-4">
+                        <a href="#contact" class="block text-gray-400 hover:text-empire-gold transition-colors">Contact Form</a>
+                        <a href="mailto:emperialcoder@gmail.com" class="block text-gray-400 hover:text-empire-gold transition-colors">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-empire-gold/20 mt-8 pt-8 text-center">
+                <p class="text-gray-400">Built by <span class="text-empire-gold font-semibold">EmperialCoder</span> © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

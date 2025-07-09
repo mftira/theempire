@@ -1,0 +1,321 @@
+/* Custom styles for The Empire website */
+
+/* Color Variables */
+:root {
+    --empire-gold: #d4af37;
+    --empire-dark: #1a1a1a;
+    --empire-gray: #2d2d2d;
+    --empire-light-gold: #f4e06d;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--empire-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--empire-gold);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--empire-light-gold);
+}
+
+/* Hero Section Enhancements */
+#hero {
+    background: linear-gradient(135deg, var(--empire-dark) 0%, #0f0f0f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Animated Background Particles */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: var(--empire-gold);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* Button Hover Effects */
+.btn-empire {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-empire:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-empire::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-empire:hover::before {
+    left: 100%;
+}
+
+/* Card Animations */
+.empire-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, var(--empire-gray), #252525);
+}
+
+.empire-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Pricing Table Enhancements */
+.pricing-table {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.pricing-row {
+    transition: all 0.3s ease;
+}
+
+.pricing-row:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
+}
+
+/* Form Styling */
+.empire-form {
+    backdrop-filter: blur(10px);
+}
+
+.empire-input {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.empire-input:focus {
+    border-color: var(--empire-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    background: var(--empire-dark);
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--empire-gold);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--empire-gold), transparent);
+    margin: 2rem 0;
+}
+
+/* Text Glow Effect */
+.text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Navigation Enhancement */
+nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--empire-gold);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .empire-card {
+        margin-bottom: 1rem;
+    }
+    
+    .pricing-table {
+        font-size: 0.9rem;
+    }
+    
+    #hero h1 {
+        font-size: 3rem;
+    }
+    
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    #hero h2 {
+        font-size: 1.25rem;
+    }
+    
+    .pricing-table {
+        font-size: 0.8rem;
+    }
+}
+
+/* Fade-in Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project Cards Special Effects */
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* Custom Logo Placeholder Styling */
+.logo-placeholder {
+    background: linear-gradient(135deg, var(--empire-gold), var(--empire-light-gold));
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Footer Enhancements */
+footer {
+    background: linear-gradient(135deg, var(--empire-dark) 0%, #0f0f0f 100%);
+}
+
+/* Utility Classes */
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.border-glow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
